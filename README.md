@@ -5,42 +5,42 @@
 | Entregable     | Procesador de datos                                        |
 | -------------- | ------------------------------------------------------------ |
 | Fecha          | 25/05/2020                                                   |
-| Proyecto       | [ASIO](https://www.um.es/web/hercules/proyectos/asio) (Arquitectura Semántica e Infraestructura Ontológica) en el marco de la iniciativa [Hércules](https://www.um.es/web/hercules/) para la Semántica de Datos de Investigación de Universidades que forma parte de [CRUE-TIC](http://www.crue.org/SitePages/ProyectoHercules.aspx) |
-| Módulo         | Fuseki                                              |
+| Proyecto       | [ASIO](https://www.um.es/web/hercules/proyectos/asio) (Arquitectura SemÃ¡ntica e Infraestructura OntolÃ³gica) en el marco de la iniciativa [HÃ©rcules](https://www.um.es/web/hercules/) para la SemÃ¡ntica de Datos de InvestigaciÃ³n de Universidades que forma parte de [CRUE-TIC](http://www.crue.org/SitePages/ProyectoHercules.aspx) |
+| MÃ³dulo         | Fuseki                                              |
 | Tipo           | Software                                                     |
 | Objetivo       | Servidor SPARQL 1.1 para proyecto ASIO |
-| Estado         | **95%** Funciona y está configurado |
-| Próximos pasos | Ampliarlo y modificarlo con las nuevas funcionalidades que se necesiten para el Hito 2. |
-| Documentación  | [Manual de usuario](https://github.com/HerculesCRUE/ib-asio-docs-/blob/master/entregables_hito_1/12-An%C3%A1lisis/Manual%20de%20usuario/Manual%20de%20usuario.md)<br />[Manual de despliegue](https://github.com/HerculesCRUE/ib-asio-composeset/blob/master/README.md)<br />[Documentación técnica](https://github.com/HerculesCRUE/ib-asio-docs-/blob/master/entregables_hito_1/11-Arquitectura/ASIO_Izertis_Arquitectura.md) |
+| Estado         | **95%** Funciona y estÃ¡ configurado |
+| PrÃ³ximos pasos | Ampliarlo y modificarlo con las nuevas funcionalidades que se necesiten para el Hito 2. |
+| DocumentaciÃ³n  | [Manual de usuario](https://github.com/HerculesCRUE/ib-asio-docs-/blob/master/entregables_hito_1/12-An%C3%A1lisis/Manual%20de%20usuario/Manual%20de%20usuario.md)<br />[Manual de despliegue](https://github.com/HerculesCRUE/ib-asio-composeset/blob/master/README.md)<br />[DocumentaciÃ³n tÃ©cnica](https://github.com/HerculesCRUE/ib-asio-docs-/blob/master/entregables_hito_1/11-Arquitectura/ASIO_Izertis_Arquitectura.md) |
 
 
 ## FUSEKI
 
 Servidor SPARQL 1.1 para proyecto ASIO
 
-Se añade configuración propia para interactuar con Trellis
+Se aÃ±ade configuraciÃ³n propia para interactuar con Trellis
 
-#### Configuración
+#### ConfiguraciÃ³n
 
-Todos los ficheros de configuración se encuentran en la ruta ./fuseki-conf
+Todos los ficheros de configuraciÃ³n se encuentran en la ruta ./fuseki-conf
 
 ##### trellis.ttl
 
-Configuración relativa a el dataset usado por Trellis, en la construcción del contenedor, creara el dataset
+ConfiguraciÃ³n relativa a el dataset usado por Trellis, en la construcciÃ³n del contenedor, creara el dataset
 
 ##### shiro.ini
 
-Configuración relativa autorización y autentificación, en este momento, se usa configuración por defecto
+ConfiguraciÃ³n relativa autorizaciÃ³n y autentificaciÃ³n, en este momento, se usa configuraciÃ³n por defecto
 
 ##### log4j.properties
 
-Configuración relativa logs
+ConfiguraciÃ³n relativa logs
 
-#### Construcción
+#### ConstrucciÃ³n
 
-El fichero **Dockerfile**, crea imagen Docker a partir de la imagen oficial `stain/jena-fuseki:latest` y añade ficheros de configuración
+El fichero **Dockerfile**, crea imagen Docker a partir de la imagen oficial `stain/jena-fuseki:latest` y aÃ±ade ficheros de configuraciÃ³n
 
-El fichero **docker-compose.yml**  usa la imagen definida en el contenedor, y añade volúmenes persistentes para datos y backups
+El fichero **docker-compose.yml**  usa la imagen definida en el contenedor, y aÃ±ade volÃºmenes persistentes para datos y backups
 
 #### Despliegue
 
@@ -56,15 +56,15 @@ Es accesible desde el **navegador** en la ruta http://localhost:3030/
 
 ![fuseki_main](https://i.ibb.co/5xhJqcf/fuseki-main.png)
 
-Y pulsando el botón query, podemos ejecutar queries SPARQL en el EndPoint http://localhost:3030/trellis
+Y pulsando el botÃ³n query, podemos ejecutar queries SPARQL en el EndPoint http://localhost:3030/trellis
 
 ![](https://i.ibb.co/X3M8fYS/fuseki-query.png)
 
 
 
-También es posible realizar la consulta a partir de su **API REST**
+TambiÃ©n es posible realizar la consulta a partir de su **API REST**
 
-Petición
+PeticiÃ³n
 
 ```http
 GET /trellis/query?query=SELECT+%3Fsubject+%3Fpredicate+%3Fobject%0A%09WHERE+%7B%0A+%09%09+%3Fsubject+%3Fpredicate+%3Fobject%0A%09%7D HTTP/1.1
@@ -248,9 +248,9 @@ Respuesta
 
 
 
-#### Configuración Trellis para conectar con el Triplestore a partir de el EndPoint SPARQL
+#### ConfiguraciÃ³n Trellis para conectar con el Triplestore a partir de el EndPoint SPARQL
 
-A partir del proyecto Trellis personalizado para le proyecto [asio-ldp](https://git.izertis.com/universidaddemurcia/semantmurc/asio-ldp), es necesario modificar el fichero config-dev.yml (la línea resources para que apunte al Endpoint SPARQL de Fuseki con el dataset del proyecto).
+A partir del proyecto Trellis personalizado para le proyecto [asio-ldp](https://git.izertis.com/universidaddemurcia/semantmurc/asio-ldp), es necesario modificar el fichero config-dev.yml (la lÃ­nea resources para que apunte al Endpoint SPARQL de Fuseki con el dataset del proyecto).
 
 ```bash
 server:
@@ -273,7 +273,7 @@ logging:
     org.trellisldp: INFO
     io.dropwizard: INFO
 
-resources: http://localhost:3030/trellis/  # Configuración para conexión al EndPoint Fuseki, apuntando al dataset trellis
+resources: http://localhost:3030/trellis/  # Configuraciï¿½n para conexiï¿½n al EndPoint Fuseki, apuntando al dataset trellis
 
 binaries: /opt/trellis/data/binaries
 
@@ -324,4 +324,3 @@ jsonld:
 
 
 ```
-
