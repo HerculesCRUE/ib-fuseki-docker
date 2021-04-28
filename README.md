@@ -4,13 +4,13 @@
 
 | Entregable     | Procesador de datos                                          |
 | -------------- | ------------------------------------------------------------ |
-| Fecha          | 25/05/2020                                                   |
+| Fecha          | 28/04/2021                                                   |
 | Proyecto       | [ASIO](https://www.um.es/web/hercules/proyectos/asio) (Arquitectura Semántica e Infraestructura Ontológica) en el marco de la iniciativa [Hércules](https://www.um.es/web/hercules/) para la Semántica de Datos de Investigación de Universidades que forma parte de [CRUE-TIC](https://www.crue.org/proyecto/hercules/) |
 | Módulo         | Fuseki                                                       |
 | Tipo           | Software                                                     |
 | Objetivo       | Servidor SPARQL 1.1 para proyecto ASIO                       |
-| Estado         | **95%** Funciona y está configurado                          |
-| Próximos pasos | Ampliarlo y modificarlo con las nuevas funcionalidades que se necesiten para el Hito 2. |
+| Estado         | **100%**                                                     |
+| Próximos pasos |                                                              |
 | Documentación  | [Manual de usuario](https://github.com/HerculesCRUE/ib-asio-docs-/blob/master/00-An%C3%A1lisis/Manual%20de%20usuario/Manual%20de%20usuario.md)<br />[Manual de despliegue](https://github.com/HerculesCRUE/ib-asio-composeset/blob/master/README.md)<br />[Documentación técnica](https://github.com/HerculesCRUE/ib-asio-docs-/blob/master/00-Arquitectura/arquitectura_semantica/documento_arquitectura/ASIO_Izertis_Arquitectura.md) |
 
 
