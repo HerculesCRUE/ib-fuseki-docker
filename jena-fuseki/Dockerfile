@@ -73,14 +73,14 @@ RUN  $FUSEKI_HOME/fuseki-server & \
 # As "localhost" is often inaccessible within Docker container,
 # we'll enable basic-auth with a random admin password
 # (which we'll generate on start-up)
-COPY ./jena-fuseki/shiro.ini $FUSEKI_HOME/shiro.ini
-COPY ./jena-fuseki/docker-entrypoint.sh /
+COPY shiro.ini $FUSEKI_HOME/shiro.ini
+COPY docker-entrypoint.sh /
 RUN chmod 755 /docker-entrypoint.sh
 
 
-COPY ./jena-fuseki/load.sh $FUSEKI_HOME/
-COPY ./jena-fuseki/tdbloader $FUSEKI_HOME/
-COPY ./jena-fuseki/tdbloader2 $FUSEKI_HOME/
+COPY load.sh $FUSEKI_HOME/
+COPY tdbloader $FUSEKI_HOME/
+COPY tdbloader2 $FUSEKI_HOME/
 RUN chmod 755 $FUSEKI_HOME/load.sh $FUSEKI_HOME/tdbloader $FUSEKI_HOME/tdbloader2
 #VOLUME /staging
 
@@ -91,8 +91,3 @@ EXPOSE 3030
 ENTRYPOINT ["/usr/bin/tini", "--", "/docker-entrypoint.sh"]
 CMD ["/jena-fuseki/fuseki-server"]
 
-
-FROM base
-# COPY ./fuseki-conf/trellis.ttl /fuseki/config.ttl
-COPY ./fuseki-conf/shiro.ini /fuseki/shiro.ini
-COPY ./fuseki-conf/log4j.properties /fuseki/log4j.properties
